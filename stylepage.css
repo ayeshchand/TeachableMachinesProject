@@ -1,0 +1,482 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f0101;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    max-width: 300px;
+    text-align: center;
+}
+.card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+.splash {
+    position: relative;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0); /* Set text color to white */
+    text-align: center;
+    padding: 20px;
+}
+
+
+.splash::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Dark overlay with 50% opacity */
+    z-index: 1;
+}
+
+.splash h1 {
+    margin-bottom: 20px; /* Adds space between the heading and paragraph */
+}
+
+.splash p {
+    margin-top: 0; /* Ensure no extra space is added */
+}
+
+.splash h1, .splash p {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-shadow: 
+        0 0 10px #000,  /* Soft glow around text */
+        0 0 20px #000;  /* Extra blur for more glow */
+}
+
+/* Navigation Bar Styling */
+nav {
+    background-color: #333; /* Dark background for the navigation bar */
+    position: fixed; /* Fixes the navigation bar to the top */
+    width: 100%; /* Stretches the nav bar across the page */
+    top: 0; /* Ensures it stays at the top of the page */
+    z-index: 100; /* Keeps the navigation bar above other content */
+    padding: 10px 0; /* Adds some padding for space inside the bar */
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #9b5de5, #f15bb5); /* Gradient background */
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Glow effect on hover */
+nav ul li a:hover {
+    background: linear-gradient(135deg, #005f73, #0a9396); /* Changes gradient on hover */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6), 0 0 20px rgba(0, 255, 255, 0.4); /* Glow effect */
+}
+
+/* About Section Styling */
+.about-image {
+    float: none; /* Remove float since we are using flexbox */
+    margin-left: 0px; /* Adjust spacing */
+    margin-right: 20px; /* Space between the image and the text */
+    max-width: 650px; /* Set a more reasonable width for the image */
+    border-radius: 20px; /* Smooth edges */
+    border: 5px solid white; /* White border around the image */
+    height: auto; /* Maintains aspect ratio */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for effect */
+    margin-top: 0px; /* Align image with top of the section */
+}
+
+.about-section {
+    padding-top: 70px; /* Space at the top to prevent overlap with the nav bar */
+    padding-bottom: 60px; /* Space at the bottom to prevent overlap with the footer */
+    display: flex; /* Use flexbox to align items */
+    align-items: flex-start; /* Align the text and image at the top */
+    margin-left: 20px; /* Margin on the left for spacing */
+    margin-right: 20px; /* Margin on the right for spacing */
+    color: #ffffff;
+    gap: 20px; /* Add space between the image and the text */
+}
+
+.about-section ul {
+    line-height: 1.6; /* Space between lines of text */
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0; /* Remove top margin to align better */
+    margin-left: 0; /* Align with image */
+}
+
+.about-container {
+    background-image: url('393909.jpg');
+    background-size: cover; /* or 'contain', depending on your needs */
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px; /* Padding inside the container */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex; /* Use flexbox to align items */
+    align-items: flex-start; /* Align content at the top */
+}
+
+
+/* Resource Page Styling */
+.resource-container {
+    padding: 50px;
+    background-color: #2b2b2b; /* Dark background to contrast with the text */
+    margin-top: 100px; /* Space below the fixed navbar */
+    margin-bottom: 100px; /* Space above the footer */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth */
+}
+
+.resource-container h1 {
+    font-size: 36px;
+    color: #f5f5f5; /* Light text for readability */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.resource-container p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    font-size: 28px;
+    color: #f15bb5; /* Matches the colors in your navigation */
+    margin-bottom: 10px;
+}
+
+.section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.section ul li {
+    margin-bottom: 10px;
+}
+
+.section ul li a {
+    color: #ad01fd; /* Links with blue color */
+    text-decoration: none;
+}
+
+.section ul li a:hover {
+    text-decoration: underline; /* Underline on hover for links */
+}
+
+/* Link styles for hover effect in resources */
+a:hover {
+    color: #0a9396;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Tech Hero Page Styling */
+.tech-hero {
+    padding-top: 100px; /* Space under the navigation */
+    text-align: center;
+    color: #f8f9fa;
+}
+
+.hero-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 30px;
+    object-fit: cover;
+}
+
+.hero-content {
+    text-align: left;
+}
+
+.hero-content h2 {
+    margin-top: 0;
+    color: #f15bb5;
+}
+
+.hero-content p {
+    color: #d1d1d1;
+}
+
+.hero-link {
+    color: #f15bb5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero-link:hover {
+    text-decoration: underline;
+}
+
+/* TM Page Styling */
+.ml-container {
+    padding: 50px;
+    background-color: #2b2b2b; /* Dark background to contrast with the text */
+    margin-top: 100px; /* Space below the fixed navbar */
+    margin-bottom: 100px; /* Space above the footer */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth */
+}
+
+.ml-container h1 {
+    font-size: 36px;
+    color: #f5f5f5; /* Light text for readability */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ml-container h2 {
+    font-size: 30px;
+    color: #f304eb; /* Light text for readability */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ml-container h3 {
+    font-size: 24px;
+    color: #a702f3; /* Light text for readability */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ml-container p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.ml-container .project-description h2 {
+    font-size: 28px;
+    color: #f15bb5; /* Matches the colors in your navigation */
+    margin-bottom: 10px;
+}
+
+.ml-container .project-description h3 {
+    font-size: 24px;
+    color: #f15bb5; /* Same as h2 for consistency */
+    margin-bottom: 15px;
+}
+
+.ml-container .project-description ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.ml-container .project-description ul li {
+    margin-bottom: 10px;
+}
+
+.ml-container .project-description ul li a {
+    color: #ad01fd; /* Links with purple color */
+    text-decoration: none;
+}
+
+.ml-container .project-description ul li a:hover {
+    text-decoration: underline; /* Underline on hover for links */
+}
+
+.ml-container iframe {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: 315px;
+}
+
+.ml-container input[type="file"] {
+    display: block;
+    margin: 20px auto;
+}
+
+.ml-container button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #f15bb5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ml-container button:hover {
+    background-color: #ff3b5c; /* Slightly darker shade for hover */
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Link styles for hover effect in TM */
+a:hover {
+    color: #0a9396;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f5f5f5;
+    padding: 14px 20px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #f15bb5;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #f5f5f5;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #f15bb5; /* Change color of dropdown button when hovering */
+}
+html {
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Button styles */
+.try-button {
+    background-color: #f15bb5; /* Matches the colors in your navigation */
+    color: #ffffff; /* White text for readability */
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.try-button:hover {
+    background-color: #d42a77; /* Slightly darker shade on hover */
+}
