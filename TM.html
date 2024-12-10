@@ -17,14 +17,28 @@
             <li class="dropdown">
                 <a href="TM.html" class="dropbtn">Teachable Machines</a>
                 <div class="dropdown-content">
-                    <a href="#project-overview">Project Overview</a>
-                    <a href="#lessons">Lessons from 'Unmasking AI'</a>
-                    <a href="#challenges">Challenges and Considerations</a>
-                    <a href="#watch-demo">Watch the Model in Action</a>
-                    <a href="#try-model">Try the Model Yourself!</a>
-                    <a href="#github">Code and Repository</a>
+                    <a href="TM.html#project-overview">Project Overview</a>
+                    <a href="TM.html#creating-title">Creating the Classifier</a>
+            
+                    <!-- Project Details with Nested Dropdown -->
+                    <div class="nested-dropdown">
+                        <a href="#" class="nested-dropbtn">Project Details &#9654;</a>
+                        <div class="nested-dropdown-content">
+                            <a href="TM.html#creation-process">The Creation Process</a>
+                            <a href="TM.html#unmask-lessons">Lessons from Unmasking AI</a>
+                            <a href="TM.html#tech-chall">Technical Challenges</a>
+                            <a href="TM.html#eth-consid">Ethical Considerations</a>
+                            <a href="TM.html#future">Future Directions</a>
+                        </div>
+                    </div>
+            
+                    <a href="TM.html#challenges">Challenges</a>
+                    <a href="TM.html#video-demo">Watch the Model</a>
+                    <a href="TM.html#try-model">Try the Model</a>
+                    <a href="TM.html#github-link">Code and Repository</a>
                 </div>
             </li>
+                        
         </ul>
     </nav>
 
@@ -38,47 +52,56 @@
             <p>The goal of this project is to build a machine learning model that can recognize and classify different brands of energy drinks. Using Google’s Teachable Machine, I trained a classifier by taking photos of different labeled energy drink cans, such as Reign, Ashoc, C4, 3D and Celsius. The trained model uses these images to predict the brand of an energy drink when an image is provided. This project involves both machine learning and practical application of image classification techniques.</p>
         </section>
 
-        <section id="lessons">
-            <h2>Lessons from 'Unmasking AI'</h2>
+        <section id="creating-title">
+            <h2>Creating the Classifier: A Machine Learning Journey</h2>
             <p>In this project, I embarked on a journey to build a machine learning model that could classify energy drink brands based on images of their cans. The model was created using Teachable Machine, a tool developed by Google’s Creative Lab that allows for easy training of machine learning models using your own datasets. Through this process, I trained the model on various images of energy drink cans from brands such as Reign, Ashoc, C4, 3D and Celsius to identify these brands when new images were presented.
 
                 The project itself was not only a technical challenge but also a deep dive into the ethical implications of machine learning, particularly around transparency, biases in datasets, and the power dynamics at play when AI is deployed in real-world scenarios. These themes, which are thoroughly discussed in Joy Buolamwini’s Unmasking AI, were crucial in shaping how I approached the design and implementation of this classifier.
                 
-                <h3>The Creation Process</h3>
-                <p>The first step in creating the energy drink brand classifier was collecting a diverse set of labeled images. Luckily for me I have a collection of 100+ cans of different varieities in my room so I opted to have 5 different types of them to be identified. The importance of diversity in the dataset was emphasized by Buolamwini, who discussed how biases in AI models often stem from skewed datasets. For example, a dataset that is not diverse enough may lead to a model that performs poorly for certain groups or types of data. In my case, ensuring that I had a wide assortment of variations as cans change with flavor so i opted to have as many flavors as i had available for each. This was crucial to making sure the model could generalize well to new, unseen data.
+                <h3 id ="creation-process">The Creation Process</h3>
+                <div class="text-image-container">
+                    <p class="text-content">The first step in creating the energy drink brand classifier was collecting a diverse set of labeled images. Luckily for me I have a collection of 100+ cans of different varieities in my room so I opted to have 5 different types of them to be identified. The importance of diversity in the dataset was emphasized by Buolamwini, who discussed how biases in AI models often stem from skewed datasets. For example, a dataset that is not diverse enough may lead to a model that performs poorly for certain groups or types of data. In my case, ensuring that I had a wide assortment of variations as cans change with flavor so i opted to have as many flavors as i had available for each. This was crucial to making sure the model could generalize well to new, unseen data.
                 
-                Once the images were collected, I uploaded them into Teachable Machine and trained the model using the pre-configured image classification tools. This was done by manually labeling each image with the corresponding brand. This labeled dataset would then be used to train the machine learning model to recognize patterns associated with each brand’s packaging and logo. After training the model, I tested it by uploading new images and showing cans to the camera and evaluating its predictions.</p>
+                    Once the images were collected, I uploaded them into Teachable Machine and trained the model using the pre-configured image classification tools. This was done by manually labeling each image with the corresponding brand. This labeled dataset would then be used to train the machine learning model to recognize patterns associated with each brand’s packaging and logo. After training the model, I tested it by uploading new images and showing cans to the camera and evaluating its predictions.</p>
+                    <img src="drink.jpg" alt="Energy drink cans" class="side-image">
+                </div>    
+
+                <h3 id ="unmask-lessons">Lessons from Unmasking AI</h3>
+                <img src="drink2.jpg" alt="Energy Drinks in Data" class="left-image">
+                <p>In Unmasking AI, Joy Buolamwini examines how AI systems can reflect and perpetuate sociocultural inequalities, especially when datasets lack diversity or transparency. Several key lessons from Buolamwini's work deeply influenced the design and evaluation of my energy drink brand classifier. Buolamwini highlights how biased datasets can lead to flawed AI systems, citing examples where facial recognition models performed poorly on people of color due to an overrepresentation of lighter-skinned faces (Buolamwini, Unmasking AI, p. 66). In my project, I realized that my dataset might reflect similar biases. For example, if the model was trained with 100 images of C4 cans but only 10 images of Reign cans, 
                 
-                <h3>Lessons from Unmasking AI</h3>
-                <p> When building this project, I found that several of the lessons from Unmasking AI resonated deeply with the process of creating and deploying machine learning models, especially around transparency and the ethical implications of AI technology. Buolamwini’s work discusses the risks of AI systems that are not transparent, which can lead to a lack of accountability and trust. For instance, when I created the model, it was essential to understand what data was used for training and how it could potentially shape the model’s behavior. The transparency of the data sources is crucial for users to trust the outcomes of the model. In my case, I ensured that the images used were clearly labeled and that users could understand the scope of the dataset, making it transparent and trustworthy.
+                the classifier tended to favor the more frequently represented brand. This imbalance mirrors Buolamwini's critique of dataset skew and demonstrates the need for balanced training data to prevent systemic bias (Buolamwini, Unmasking AI, p. 89). Buolamwini argues that "without transparency, there is no accountability" (Unmasking AI, p. 153). Applying this principle to my project, I recognized the importance of making my dataset and training process transparent. Currently, the dataset is stored within Teachable Machine, but to align with Buolamwini's call for openness, I plan to make the dataset accessible via a public repository(GitHub), which includes the image to the left. This would allow others to understand the data used, test the model's performance, 
+                    
+                and identify potential biases. Buolamwini emphasizes the importance of acknowledging AI model failures to build fairer systems, noting that "when failures go unexamined, they become the seeds of future harm" (Unmasking AI, p. 178). In my project, the model produced false positives when images were too similar or when background noise interfered. Recognizing these failures helped me understand the need for more diverse data and iterative testing—a practice Buolamwini advocates to ensure AI systems perform reliably across varied inputs. Her research also highlights how AI models trained on similar datasets risk reinforcing inequality (Unmasking AI, p. 115). 
                 
-                Another critical lesson from Buolamwini’s work was the need for diverse datasets to avoid inherent biases in AI systems. In Unmasking AI, Buolamwini highlights how facial recognition systems have been shown to perform worse on people of color, particularly Black women, due to biased training data that over-represented lighter-skinned faces. Similarly, I had to ensure that the dataset used for my energy drink classifier was not skewed towards one brand or design type, as this would affect the accuracy of the model when it encountered new, unseen images. For example, I made sure to include cans from both major brands (like Reign) and smaller or less common brands to improve the model’s ability to generalize.
+                To address this, I made a conscious effort to include images of different can designs and flavors to ensure the model could generalize better. This aligns with Buolamwini's principle that diverse, representative datasets are important in creating fair and unbiased AI systems. By applying these lessons, my project aims to reflect Buolamwini's advocacy for fair, transparent, and accountable AI development. This process not only improved the classifier but also deepened my understanding of the ethical implications of deploying AI in real-world applications.</p>
                 
-                Additionally, Buolamwini’s discussion of AI ethics pushed me to consider the implications of my work. Using copyrighted images for training the model could have led to legal concerns, so I opted to use only publicly available images or Cans that I had available to me. This decision was important in reflecting ethical AI practices, where the use of data—especially data that belongs to others—should always be handled responsibly.</p>
-                
-                <h3>Technical Challenges</h3>
+                <h3 id ="tech-chall">Technical Challenges</h3>
+                <img src="tm1.jpeg" alt="Failed TM" class="right-image">
                 <p>One of the major challenges I encountered during this project was ensuring that the machine learning model did not overfit. Overfitting occurs when a model is too closely tied to the training data and performs poorly on new, unseen data. To mitigate this risk, I made sure to use a variety of flavors, with different variations in packaging. Buolamwini’s work emphasizes the risks of overfitting in AI systems, especially when they are deployed in real-world scenarios where the input data is unpredictable and varied. This lesson from Unmasking AI reinforced the need for a robust and generalized model.
                 
-                Moreover, training the model and ensuring its accuracy was a time-consuming process, as it involved not only refining the model but also iterating on the images and dataset itself. This process was marked by multiple rounds of testing and feedback, which closely mirrors the iterative process that Buolamwini advocates for in her work, where AI models are continuously improved and evaluated to prevent unintended consequences.</p>
+                Moreover, training the model and ensuring its accuracy was a time-consuming process, as it involved not only refining the model but also iterating on the images and dataset itself. In the image above, you can see a dataset with thousands of images with 7 different classes(Fun fact: The testing not only took too long, but also made the website crash), which demonstrated that even the dataset was a factor in how well the TM was able to train. This process was marked by multiple rounds of testing and feedback, which closely mirrors the iterative process that Buolamwini advocates for in her work, where AI models are continuously improved and evaluated to prevent unintended consequences.</p>
                 
-                <h3>Ethical Considerations</h3>
+                <h3 id ="eth-consid">Ethical Considerations</h3>
                 <p>Throughout the development of this project, I also had to consider the ethical implications of using machine learning and AI. Buolamwini’s book draws attention to the importance of fairness in AI, and this was something I had to keep in mind. For instance, the accuracy of the model could be impacted by how well the images represented the various energy drink brands. I had to ensure that my dataset was representative and not biased toward one particular design aesthetic or color scheme.
                 
-                Furthermore, I thought about how this technology could potentially be used in ways that might perpetuate stereotypes or reinforce certain power structures. For example, while the energy drink industry is competitive, the potential for AI systems to be used for brand surveillance or marketing without consumers’ knowledge could be problematic. In my work, I was careful to remain transparent about how the model was created and its intended uses.</p>
+                Furthermore, I thought about how this technology could potentially be used in ways that might create stereotypes or reinforce certain power structures. For example, while the energy drink industry is competitive, the potential for AI systems to be used for brand surveillance or marketing without consumers’ knowledge could be problematic. In my work, I was careful to remain transparent about how the model was created and its intended uses.</p>
                 
-                <h3>Future Directions</h3>
-                <p>While the model works well for classifying energy drink brands based on images, there is always room for improvement. One potential area for development is the expansion of the dataset to include more brands, more diverse packaging, more camera angles, different lighting and even different types of energy drinks, like sugar-free or organic varieties. This would help make the model even more robust and accurate. Additionally, I plan to implement more advanced machine learning techniques to enhance the model’s precision and expand it to other types of products.
+                <h3 id ="future">Future Directions</h3>
+                <p>While the model works well for classifying energy drink brands based on images, there is always room for improvement. One potential area for development is the expansion of the dataset to include more brands, more diverse packaging, more camera angles, different lighting and even different types of energy drinks, like sugar-free or organic varieties. I had attempted to create a new TM with a larger variety of brands and more angles, but failed as the training failed to work along with the website crashing so I had to stick with my inital TM. This would help make the model even more robust and accurate. Additionally, I plan to implement more advanced machine learning techniques to enhance the model’s precision and expand it to other types of products.
                 
                 Incorporating the lessons learned from Unmasking AI, such as fairness, transparency, and responsibility in AI development, will be essential as I continue to improve this classifier and move toward more complex machine learning projects.</p>
         </section>
 
         <section id="challenges">
-            <h3>Challenges and Considerations</h3>
-            <p>While creating the image classifier was exciting, it also came with challenges. One of the main challenges was ensuring that the images I used for training were of high quality and varied. For example, energy drink cans come in different colors, designs, and sizes, which required me to collect a diverse dataset to prevent overfitting. Furthermore, a challenge that I kept in mind throughout the project was the ethical consideration of using copyrighted images. I made sure to use publicly available images(the cans available in my room collection) to avoid any legal issues. This experience helped me reflect on how data can be both a tool and a responsibility in AI development.</p>
+            <h2>Challenges and Considerations</h2>
+            <p>While creating the image classifier was exciting, it also came with challenges. One of the main challenges was ensuring that the images I used for training were of high quality and varied. For example, energy drink cans come in different colors, designs, and sizes, which required me to collect a diverse dataset to prevent overfitting. Furthermore, a challenge that I kept in mind throughout the project was the ethical consideration of using copyrighted images. I made sure to use publicly available images(the cans available in my room collection) to avoid any legal issues. This experience helped me reflect on how data can be both a tool and a responsibility in AI development.
+            I also observed some false positives during testing, particularly when images had noisy backgrounds or lighting inconsistencies. For instance, a C4 sometimes showed as Reign can due to similar color schemes. One of the biggest issues I noticed was that if the model encounters an image that is only slightly different from the training examples(such as rotated or dented), it sometimes fails to classify it correctly. This aligns with Buolamwini’s discussions in Unmasking AI about how biased or limited datasets can produce flawed AI models. Expanding the dataset to include more diverse images—such as different lighting conditions, angles, and backgrounds—would likely improve functionality.
+            </p>
         </section>
 
-        <section id="watch-demo">
-            <h3>Watch the Model in Action</h3>
+        <section id="video-demo">
+            <h2>Watch the Model in Action</h2>
             <p>Below is a video that demonstrates how the energy drink brand classifier works. The model is trained to classify various energy drink cans. Watch as the model predicts the brand of the drink based on the can held up to the camera.</p>
             <!-- Embed the video -->
             <iframe width="560" height="315" src="PROJRECORD.mp4" title="Energy Drink Classifier Demo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -96,10 +119,12 @@
             </a>
         </section>
 
-        <section id="github">
+        <section id="github-link">
             <h3>Code and Repository</h3>
             <p>The code for this project is available on GitHub. You can access the repository by clicking the link below. The repository includes all files necessary to run the model, including the images used for training and the Teachable Machine model files.</p>
-            <a href="https://github.com/yourusername/energy-drink-classifier" target="_blank">Visit GitHub Repository</a>
+            <div style="text-align: center;">
+                <a href="https://github.com/ayeshchand/TeachableMachinesProject" target="_blank" style="color: fuchsia; font-size: large; font-style: italic; ">Visit GitHub Repository</a>
+            </div>
         </section>
     </div>
 
@@ -107,6 +132,44 @@
     <footer>
         <p>© 2024 Ayesh Chandrasekera</p>
     </footer>
+    
+    <!--Needed to add one Javascript function to have the functionality for the dropdown menu to work the way I desired it to-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Function to offset the scroll position
+            function scrollToSection() {
+                const hash = window.location.hash;
+                if (hash) {
+                    const element = document.querySelector(hash);
+                    if (element) {
+                        const offset = 80; // Adjust this number based on your navbar height
+                        const topPosition = element.offsetTop - offset;
+                        window.scrollTo({ top: topPosition, behavior: "smooth" });
+                    }
+                }
+            }
+        
+            // Scroll to section on page load if there's a hash
+            scrollToSection();
+        
+            // Scroll to section when a link with a hash is clicked
+            document.querySelectorAll('a[href^="TM.html#"], a[href^="#"]').forEach(link => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute("href").split("#")[1];
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        const offset = 80;
+                        const topPosition = targetElement.offsetTop - offset;
+                        window.scrollTo({ top: topPosition, behavior: "smooth" });
+                        // Update the URL hash without jumping
+                        history.pushState(null, null, `#${targetId}`);
+                    }
+                });
+            });
+        });
+        </script>
+        
 
 </body>
 </html>

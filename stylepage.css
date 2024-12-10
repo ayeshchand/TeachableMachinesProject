@@ -480,3 +480,94 @@ html {
 .try-button:hover {
     background-color: #d42a77; /* Slightly darker shade on hover */
 }
+
+/* Main Dropdown Styling */
+.dropdown-content {
+    position: absolute;
+    display: none;
+    background-color: #333;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #f5f5f5;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* Nested Dropdown Styling */
+.nested-dropdown {
+    position: relative;
+}
+
+.nested-dropdown .nested-dropdown-content {
+    display: none;
+    position: absolute;
+    left: 100%; /* Align to the right of the parent dropdown */
+    top: 0;
+    background-color: #333;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2; /* Ensure it appears above other content */
+}
+
+.nested-dropdown:hover .nested-dropdown-content {
+    display: block;
+}
+
+/* Style for Nested Dropdown Button */
+.nested-dropbtn {
+    padding: 12px 16px;
+    color: #f5f5f5;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.nested-dropbtn:hover {
+    background-color: #555;
+}
+
+.text-image-container {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px; /* Space between the text and image */
+    margin-bottom: 20px;
+}
+
+.text-content {
+    flex: 1; /* Allow the text to take up available space */
+}
+
+.side-image {
+    max-width: 250px; /* Adjust the width as needed */
+    height: auto;
+    border: 1px solid #ccc; /* Optional: Adds a border for better visual separation */
+    border-radius: 8px; /* Optional: Rounds the corners */
+}
+
+.left-image {
+    float: left;
+    width: 250px;       /* Adjust the width as needed */
+    margin: 0 15px 10px 0;  /* Top, right, bottom, left margins for spacing */
+    border-radius: 8px; /* Optional: adds rounded corners */
+}
+
+.right-image {
+    float: right;
+    width: 800px;        /* Adjust the width as needed */
+    margin: 0 0 10px 15px;  /* Top, right, bottom, left margins for spacing */
+    border-radius: 8px;  /* Optional: adds rounded corners */
+}
+
